@@ -1,0 +1,9 @@
+table name: lockbox
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | varchar(36)  | NO   | PRI | NULL    |       |
+| created | date         | YES  |     | NULL    |       |
+| type    | varchar(5)   | YES  |     | NULL    |       |
+| record  | varchar(255) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+

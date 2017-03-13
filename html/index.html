@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>LockBox</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            function showTextInput() {
+                $.ajax({
+                    type : "GET",
+                    url : "http://localhost:8080/text",
+                    success : function (msg) {
+                        console.log(msg);
+                        document.getElementById("input").innerHTML=msg;
+                    },
+                    error : function (jgXHR, textStatus, errorThrown) {
+                        alert("Error: " + textStatus + " " + errorThrown);
+                    }
+                });
+            }
+            function showImageInput() {
+                $.ajax({
+                    type : "GET",
+                    url : "http://localhost:8080/image",
+                    success : function (msg) {
+                        console.log(msg);
+                        document.getElementById("input").innerHTML=msg;
+                    },
+                    error : function (jgXHR, textStatus, errorThrown) {
+                        alert("Error: " + textStatus + " " + errorThrown);
+                    }
+                });
+            }
+            function showFileInput() {
+                $.ajax({
+                    type : "GET",
+                    url : "http://localhost:8080/file",
+                    success : function (msg) {
+                        console.log(msg);
+                        document.getElementById("input").innerHTML=msg;
+                    },
+                    error : function (jgXHR, textStatus, errorThrown) {
+                        alert("Error: " + textStatus + " " + errorThrown);
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Stuff that's displayed -->
+        <h1>LockBox<br></h1>
+        <div style="width : 50%; float : left">
+            <input type=button value="Text" id="text" />
+            <input type=button value="Image" id="image" />
+            <input type=button value="File" id="file" />
+            <br>
+            <div id="input"></div>
+            <input type=button value="Upload!" id="upload" />
+            <script>showTextInput()</script>
+            <script>
+                document.getElementById("text").addEventListener("click", function (event) {
+                    showTextInput();
+                });
+                document.getElementById("image").addEventListener("click", function (event) {
+                    showImageInput();
+                });
+                document.getElementById("file").addEventListener("click", function (event) {
+                    showFileInput();
+                })
+                document.getElementById("upload").addEventListener("click", function (event) {
+                    $.ajax({
+                        type: "POST",
+                        url: '/upload',
+                        data: data,
+                        success: success,
+                        dataType: dataType
+                    });
+                })
+            </script>
+        </div>
+        <div style="width : 50%; float : left" id="result"></div>
+    </body>
+</html>

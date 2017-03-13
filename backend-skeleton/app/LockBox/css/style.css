@@ -1,0 +1,540 @@
+/*
+
+	AgendaMaster Default
+	by prokhorVLG (Valentin Sigalov)
+	
+*/
+
+/* General Formatting Rules */
+
+p {
+	width: 500px;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/background.jpg') no-repeat center center fixed;
+	/*background-image: url("images/background.jpg");*/
+	color: #fff;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13pt;
+	font-weight: 300;
+}
+
+em {
+	font-style: normal;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15pt;
+	font-weight: 300;
+}
+
+form {
+	color: #fff;
+	margin: 0 0 2em 0;
+	font-size:0.8em;
+}
+
+/* Contains all of the content on the page */
+
+.container {
+	
+	vertical-align:top;
+	
+	position: absolute;
+	top: 5%;
+	bottom: 5%;
+	width: 500px;
+	left: 50%;
+	transform: translateX(-50%);
+	
+}
+
+/* Stripes on the right and left */
+
+.floated {
+	
+	display: inline-block;
+	
+}
+
+.stripe {
+
+	width:0px;
+	
+	height: 100%;
+	
+	transition: 0.3s;
+	
+	border: 1px solid white;
+	border-radius: 3px;
+}
+
+.s1 {
+	
+	/*left: 0;*/
+	
+}
+
+.s2 {
+	
+	/* right: 0; */
+	/*left: 0;*/
+	
+}
+
+.content {
+	
+	vertical-align:top;
+	width: 480px;
+	height: 100%;
+	
+}
+
+.stack {
+	
+	height:200px;
+	margin:20px;
+	
+	text-align: center;
+	
+}
+
+.inStack {
+	
+	display:flex; 
+	align-items: center;
+	justify-content: center;
+	
+	flex-direction: column;
+	
+}
+
+/* Thin Buttons */
+
+.thinButton {
+	
+	
+	border: 2px solid white;
+	border-radius: 10px;
+	
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	width: 100px;
+	
+	color: white;
+	background: rgba(255,255,255,0);
+	
+	transition: 0.3s ease-in-out;
+	user-select: none;
+	
+	display: inline-block;
+	
+}
+
+.thinButton:hover {
+	
+	border-radius: 20px;
+	background: rgba(255,255,255,0.5);
+	
+}
+
+.thinButton:active {
+	
+	transition: 0.01s ease-in-out;
+	color: #000;
+	background: rgba(255,255,255,1);
+	
+	border-radius: 20px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Specific text classes */
+
+.leftText {
+	float: left;
+	text-align: left;
+}
+
+.alignedText {
+	float: right;
+	text-align: right;
+}
+
+/* About DIV classes */
+
+.centeredAbout {
+	position: absolute;
+	bottom: 50%;
+    top: 50%;
+    left: 50%;
+	transition: 0.3s;
+}
+	
+.centeredAboutText {
+	position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.centeredAboutLink {
+	position: absolute;
+    top: 350px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	text-align: center;
+	font-size: 11pt;
+	font-weight: 300;
+}
+
+/* Login-About Transition classes */
+
+.hidden {
+	opacity: 0;
+	transition-timing-function: linear, step-end;
+}
+
+.gone {
+	display: none;
+}
+
+/* Login DIV classes */
+
+.centered {
+	background-color: 000;
+	position: absolute;
+	bottom: 50%;
+    top: 50%;
+    left: 50%;
+	right: 50%;
+	transition: 0.3s;
+	}
+	
+.centeredLogo {
+	position: absolute;
+    top: -150px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	}
+	
+.centeredForm {
+	position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	text-align: left;
+}
+
+.centeredButton{
+	position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.centeredLinks{
+	position: absolute;
+    top: 320px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	text-align: center;
+	width: 300px;
+}
+
+/* Register DIV classes */
+
+.centeredRegisterOut {
+	background-color: 000;
+	position: absolute;
+	top: 200%;
+    left: 50%;
+	transition: 0.3s;
+	display: none;
+	}
+	
+.centeredLogoRegister {
+	position: absolute;
+    top: -180px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	}
+	
+.centeredFormRegister {
+	position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	text-align: left;
+}
+
+.centeredButtonRegister {
+	position: absolute;
+    top: 225px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.centeredLinksRegister {
+	position: absolute;
+    top: 290px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	text-align: center;
+	width: 300px;
+	transition: 0.3s;	
+}
+	
+/* Password Recovery DIV classes */
+
+.centeredPassgenOut {
+	background-color: 000;
+	position: absolute;
+    top: -400%;
+    left: 50%;
+	transition: 0.3s;
+	display: none;
+	}
+
+.centeredLogoPassgen {
+	position: absolute;
+    top: -180px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	}
+	
+.centeredFormPassgen {
+	position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	text-align: left;
+}
+
+.centeredButtonPassgen {
+	position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.centeredLinksPassgen {
+	position: absolute;
+    top: 320px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	text-align: center;
+	width: 295px;
+	transition: 0.3s;	
+}
+
+/* Stylish Input Button classes */
+
+input[type="button"],
+	.button {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-o-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		-moz-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+		-webkit-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+		-o-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+		-ms-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+		transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+		background-color: #0D9BFD;
+		border-radius: 6px;
+		width:230px;
+		border: 0;
+		color: #fff !important;
+		cursor: pointer;
+		display: inline-block;
+		font-weight: 300;
+		font-size: 12pt;
+		font-family: 'Open Sans', sans-serif;
+		height: 2.9em;
+		line-height: 2.8em;
+		padding: 0 2em;
+		text-align: center;
+		text-decoration: none;
+		white-space: nowrap;
+		font-weight: bold;
+	}
+
+		input[type="button"]:hover,
+		.button:hover {
+			background-color: #68bffd;
+		}
+
+		input[type="button"]:active,
+		.button:active {
+			background-color: #0285e3;
+		}
+		
+/* Stylish Text Box classes */
+
+input.TextboxUser {
+	font-weight: 300;
+	font-size: 11pt;
+	font-family: 'Open Sans', sans-serif;
+    border: 1px solid #c4c4c4;
+    width: 250px;
+    height: 26px;
+    padding: 4px 4px 4px 40px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 0px 0px 8px #262626;
+    -moz-box-shadow: 0px 0px 8px #262626;
+    -webkit-box-shadow: 0px 0px 8px #262626;
+}
+
+input.TextboxUser:focus {
+	font-family: 'Open Sans', sans-serif;
+    outline: none;
+    border: 1px solid #0D9BFD;
+    box-shadow: 0px 0px 8px #0D9BFD;
+    -moz-box-shadow: 0px 0px 8px #0D9BFD;
+    -webkit-box-shadow: 0px 0px 8px #0D9BFD;
+}​
+
+/* Text Box Invalid-Input style */
+
+.notSame {
+	border: 1px solid #ff0000;
+    box-shadow: 0px 0px 8px #ff0000;
+    -moz-box-shadow: 0px 0px 8px #ff0000;
+    -webkit-box-shadow: 0px 0px 8px #ff0000;
+	color: #ff0000;
+}
+
+/* Link Styling 
+
+If you, the reader, review the code in this section carefully, you'll
+find that there is a bit of redundancy - both the class and the stylings 
+include identical properties.
+
+Do not try to slim it down, though: for some reason, the stylings only 
+work if they appear in both.
+
+*/
+
+.baseLinkStyle {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/*
+
+a:link {
+	color: #0D9BFD;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #0268b1;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #68bffd;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:focus {
+	color: #0D9BFD;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:active {
+	color: #b3dffe;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+*/
+
+/* Individual Text Box Image Classes */
+
+.username {
+	background:url('images/AM_user_inactive.png') left center no-repeat;
+	background-size: 15px 15px;
+	background-color: #fff;
+	background-position: 12px 50%;
+}
+
+.username:focus {
+	background:url('images/AM_user_active.png') left center no-repeat;
+	background-size: 15px 15px;
+	background-color: #fff;
+	background-position: 12px 50%;
+	color: #0D9BFD;
+}
+
+.password {
+	background:url('images/AM_password_inactive.png') left center no-repeat;
+	background-size: 15px 15px;
+	background-color: #fff;
+	background-position: 12px 50%;
+}
+
+.password:focus {
+	background:url('images/AM_password_active.png') left center no-repeat;
+	background-size: 15px 15px;
+	background-color: #fff;
+	background-position: 12px 50%;
+	color: #0D9BFD;
+}
+
+.email {
+	background:url('images/AM_email_inactive.png') left center no-repeat;
+	background-size: 15px 15px;
+	background-color: #fff;
+	background-position: 12px 50%;
+}
+
+.email:focus {
+	background:url('images/AM_email_active.png') left center no-repeat;
+	background-size: 15px 15px;
+	background-color: #fff;
+	background-position: 12px 50%;
+	color: #0D9BFD;
+}

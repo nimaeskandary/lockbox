@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		
+		<script src="js/jquery.js"></script> 
+		<script src="js/jquery-ui.js"></script>
+		
+		<script src="js/prefixfree.js"></script>
+		<script src="js/jquery-latest.js"></script>
+		
+		<script>
+		
+			//The following [4] functions correspond to a link that animates 
+		
+			function jOnLoginToRegister() {
+				var register = document.getElementById("register");
+				var login = document.getElementById("login");
+				
+				$("#register" ).fadeIn(0);
+				
+				register.style.top = "50%";
+				login.style.bottom = "200%";
+				login.style.top = "-200%";
+				
+				$("#login").fadeOut(1000);
+			}
+			
+			function jOnRegisterToLogin() {
+				var register = document.getElementById("register");
+				var login = document.getElementById("login");
+				
+				$("#login").fadeIn(0);
+				
+				register.style.top = "200%";				
+				login.style.bottom = "50%";
+				login.style.top = "50%";
+				
+				$("#register" ).fadeOut(1000);
+			}
+			
+			function jOnLoginToPassgen() {
+				var passgen = document.getElementById("passgen");
+				var login = document.getElementById("login");
+				
+				$("#passgen" ).fadeIn(0);
+				
+				passgen.style.top = "50%";
+				login.style.bottom = "-200%";
+				login.style.top = "200%";
+				
+				$("#login" ).fadeOut(1000);
+			}
+			
+			function jOnPassgenToLogin() {
+				var passgen = document.getElementById("passgen");
+				var login = document.getElementById("login");
+				
+				$("#login").fadeIn(0);
+				
+				passgen.style.top = "-200%";
+				login.style.bottom = "50%";
+				login.style.top = "50%";
+				
+				$("#passgen" ).fadeOut(1000);
+			}
+			
+			function jOnLoginToAbout() {
+				
+				var stripeDiv = document.getElementById("stripeDiv");
+				stripeDiv.style.width = "1000px";
+				
+				var about = $('#about');
+				var login = $('#login');
+				
+				login.toggleClass('hidden');
+				setTimeout(function(){ login.toggleClass('gone'); }, 300);
+				about.toggleClass('gone');
+				setTimeout(function(){ about.toggleClass('hidden'); }, 300);
+				
+			}
+			
+			function jOnAboutToLogin() {
+			
+				var stripeDiv = document.getElementById("stripeDiv");
+				stripeDiv.style.width = "470px";
+				
+				var about = $('#about');
+				var login = $('#login');
+				
+				about.toggleClass('hidden');
+				login.toggleClass('gone');
+				setTimeout(function(){ login.toggleClass('hidden'); }, 500);
+				setTimeout(function(){ about.toggleClass('gone'); }, 300);
+							
+			}
+			
+			function checkSame() {
+				var passreg = document.getElementById("passreg");
+				var confirmpassreg = document.getElementById("confirmpassreg");
+				var isError = 0;
+				if (passreg.value != confirmpassreg.value) {
+					passreg.style = "border: 1px solid #ff0000; box-shadow: 0px 0px 8px #ff0000; -moz-box-shadow: 0px 0px 8px #ff0000; -webkit-box-shadow: 0px 0px 8px #ff0000;";
+					confirmpassreg.style = "border: 1px solid #ff0000; box-shadow: 0px 0px 8px #ff0000; -moz-box-shadow: 0px 0px 8px #ff0000; -webkit-box-shadow: 0px 0px 8px #ff0000;";
+					passreg.placeholder = "Passwords didn't match.";
+					confirmpassreg.placeholder = "Passwords didn't match.";
+					passreg.value = "";
+					confirmpassreg.value = "";
+					isError = 1;
+				}
+				
+				//Add a check here that makes sure email and username don't already exist in database when registering.
+				//pseudocode follows:
+				
+				var registerEmail = document.getElementById("registerEmail");
+				var registerUser = document.getElementById("registerUser");
+				/*
+				if (registerEmail.value == <somethingInDatabase>){
+					registerEmail.style = "border: 1px solid #ff0000; box-shadow: 0px 0px 8px #ff0000; -moz-box-shadow: 0px 0px 8px #ff0000; -webkit-box-shadow: 0px 0px 8px #ff0000;";
+					registerEmail.placeholder = "Email already in use.";
+					registerEmail.value = "";
+					isError = 1;
+				}
+				if (registerUser.value == <somethingInDatabase>){
+					registerUser.style = "border: 1px solid #ff0000; box-shadow: 0px 0px 8px #ff0000; -moz-box-shadow: 0px 0px 8px #ff0000; -webkit-box-shadow: 0px 0px 8px #ff0000;";
+					registerUser.placeholder = "Username already in use.";
+					registerUser.value = "";
+					isError = 1;
+				}
+				
+				if (isError == 0) {
+					<submit values into new account on database>
+				}
+				*/
+				
+			}
+				
+			function loginFunc() {
+				var username = document.getElementById("username");
+				var password = document.getElementById("password");
+				
+				//Add a check here to make sure credentials are correct.
+				//pseudocode follows:
+				
+				/*
+				if (username.value == <somethingInDatabase>) {
+					if (password.value == <somethingInDatabase>){
+						<success; proceed to main site>
+					}
+					else {
+						password.style = "border: 1px solid #ff0000; box-shadow: 0px 0px 8px #ff0000; -moz-box-shadow: 0px 0px 8px #ff0000; -webkit-box-shadow: 0px 0px 8px #ff0000;";
+						password.placeholder = "Password was incorrect.";
+						password.value = "";
+					}
+				}
+				else {
+					username.style = "border: 1px solid #ff0000; box-shadow: 0px 0px 8px #ff0000; -moz-box-shadow: 0px 0px 8px #ff0000; -webkit-box-shadow: 0px 0px 8px #ff0000;";
+					username.placeholder = "Username did not exist.";
+					username.value = "";
+				}
+				*/
+				
+			}
+				
+		</script>
+		
+			<link rel="stylesheet" type="text/css" href="css/style.css">
+			<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans"></link>
+			
+			<!--<script src="upload_form_files/login.htm"></script>-->
+			
+			<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+			<title>Upload -- LockBox</title>
+			<meta charset="UTF-8">
+			
+	</head>
+	
+	<!-- Body -->
+	
+	<body>
+		
+		<div class="container">
+				
+			<div class="floated stripe s1" id="stripeDiv1"></div>
+			<div class="floated content" id="content">
+				<div class="stack inStack" style="border: 2px dashed blue;">
+					<div style="width: 80%;">
+						SELECT CONTENT TYPE <hr>
+					</div>
+					<div style="">
+						<a class="thinButton" style="width: 70px" id="textButton">TEXT</a>
+						<a class="thinButton" style="width: 70px" id="imageButton">IMAGE</a>
+						<a class="thinButton" style="width: 70px" id="fileButton">FILE</a>
+					</div>
+				</div>
+				<div class="stack" style="border: 2px dashed red;">
+					
+				</div>
+				<div class="stack" style="border: 2px dashed yellow;">
+					
+				</div>
+			</div>
+			<div class="floated stripe s2" id="stripeDiv2"></div>
+			
+		</div>
+		
+	</body>
+</html>
